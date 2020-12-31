@@ -1,2 +1,2 @@
 # LKE_2020
-LP Course project (FIT)
+LP Course Project (FIT 4_2)
