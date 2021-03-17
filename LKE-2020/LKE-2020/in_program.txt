@@ -1,0 +1,78 @@
+! Adhere 'STD.lib'                                                       # Подключение директив
+! Form <note t>unit notelength
+! Form <note f, note s>idle comprnotes
+! Form <note g, note s>note cncatnotes
+! Form <unit a, unit b> unit powerunit
+
+order<unit p>                                                            # Простая функция
+unit SimpleFunc
+: release >> 0X128.
+
+[6]unit BigData {0X11, 0X7, 0o25, 16, 32, 0o17} .                        # Глобальные переменные
+&unit globalUn = 244.
+&idle globalIdl = true.
+&note globalNote = "First step is done.../n/n".
+
+order <>note VoidParmCall :                                              # Функция без параметров
+release >> globalNote.
+
+order<note n> note PrintName:                                            # Две пользовательские функции
+    write<< "My name is "
+    write<< n
+    write<< "/n"
+    n = "End."
+    VoidParmCall()
+release >> VoidParmCall().
+
+order <note a, note b> idle GetTestMessage
+:
+    check comprnotes(a, "perfect") = >
+    b = cncatnotes(a, " almost got it!"),
+    get => b = cncatnotes(b, ":) /nEnd of test./n");
+    write << b
+release >> SimpleFunc(17)
+.
+
+main                                                                     # Точка входа - функция _main_
+:
+    &note start = "/n----- Test starts! -----/n"
+    write << start
+
+    [5]unit array {322,  0X1C,4 , 0o15}   
+
+    &unit x = notelength(start) * (33 % 10 + 156/27)                     # Вычисление выражения и условие над ним
+    write << PrintName("Kirill")
+    check 0X416/x > 3
+    => write << "Go to the case #1/n",
+    check x > 0 =>
+    write << "Go to the bad choice/n",
+    get => write << "it is fail../n";
+    
+    &unit z = (powerunit(array[3], 2) - 11 * 2) / (x - 513 / 3)
+    write << "Value of Z is : "
+    write << z
+    write << "/n"
+
+    &note comment = "Powered "
+    &note Str = cncatnotes(comment, "by POIT ")
+    write << "String1 equal to string2 ? -> "
+    &idle cmpr,
+    cmpr = comprnotes(Str, "string with 124*0+5;")
+    write << cmpr
+    write << "/n/n"
+
+    write << "Array: "                                                   # Использование цикла для вывода массива
+    &unit i = cmpr
+    since i till array[2] + 1
+    :
+    write << array[i]
+    check array[i] < BigData[5] => skip
+    &unit h = powerunit(2, i)
+    check array[i] / globalIdl + 2 * (333 - globalUn) ! (h * (z + 44) - 25)
+    =>
+    write << ", ";
+    write << "/n"
+
+    ..GetTestMessage(" >> last check?", Str)
+
+end.

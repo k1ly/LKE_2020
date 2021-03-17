@@ -1,0 +1,95 @@
+-----------------------------
+---- Контрольный пример -----
+---- на языке LKE-2020 ------
+
+-------- ПРОТОКОЛ -----------
+---- 29.12.20 14:14:18 ------
+
+-------- Параметры ----------
+
+-in: C:\Users\Кирилл\OneDrive\Documents\LP_KP\LKE-2020\LKE-2020\/in_program.txt
+-out: C:\Users\Кирилл\OneDrive\Documents\LP_KP\LKE-2020\LKE-2020\/in_data.txt
+-log: C:\Users\Кирилл\OneDrive\Documents\LP_KP\LKE-2020\LKE-2020\/in_log.txt
+
+----- Исходные данные -------
+
+1:	!Adhere 'STD.lib'|
+2:	!Form<note t>unit notelength|
+3:	!Form<note f,note s>idle comprnotes|
+4:	!Form<note g,note s>note cncatnotes|
+5:	!Form<unit a,unit b>unit powerunit|
+7:	order<unit p>|
+8:	unit SimpleFunc|
+9:	:release>>0X128.|
+11:	[6]unit BigData{0X11,0X7,0o25,16,32,0o17}.|
+12:	&unit globalUn=244.|
+13:	&idle globalIdl=true.|
+14:	&note globalNote="First step is done.../n/n".|
+16:	order<>note VoidParmCall:|
+17:	release>>globalNote.|
+19:	order<note n>note PrintName:|
+20:	write<<"My name is "|
+21:	write<<n|
+22:	write<<"/n"|
+23:	n="End."|
+24:	VoidParmCall()|
+25:	release>>VoidParmCall().|
+27:	order<note a,note b>idle GetTestMessage|
+28:	:|
+29:	check comprnotes(a,"perfect")=>|
+30:	b=cncatnotes(a," almost got it!"),|
+31:	get=>b=cncatnotes(b,":) /nEnd of test./n");|
+32:	write<<b|
+33:	release>>SimpleFunc(17)|
+34:	.|
+36:	main|
+37:	:|
+38:	&note start="/n----- Test starts! -----/n"|
+39:	write<<start|
+41:	[5]unit array{322,0X1C,4,0o15}|
+43:	&unit x=notelength(start)*(33%10+156/27)|
+44:	write<<PrintName("Kirill")|
+45:	check 0X416/x>3|
+46:	=>write<<"Go to the case #1/n",|
+47:	check x>0=>|
+48:	write<<"Go to the bad choice/n",|
+49:	get=>write<<"it is fail../n";|
+51:	&unit z=(powerunit(array[3],2)-11*2)/(x-513/3)|
+52:	write<<"Value of Z is : "|
+53:	write<<z|
+54:	write<<"/n"|
+56:	&note comment="Powered "|
+57:	&note Str=cncatnotes(comment,"by POIT ")|
+58:	write<<"String1 equal to string2 ? -> "|
+59:	&idle cmpr,|
+60:	cmpr=comprnotes(Str,"string with 124*0+5;")|
+61:	write<<cmpr|
+62:	write<<"/n/n"|
+64:	write<<"Array: "|
+65:	&unit i=cmpr|
+66:	since i till array[2]+1|
+67:	:|
+68:	write<<array[i]|
+69:	check array[i]<BigData[5]=>skip|
+70:	&unit h=powerunit(2,i)|
+71:	check array[i]/globalIdl+2*(333-globalUn)!(h*(z+44)-25)|
+72:	=>|
+73:	write<<", ";|
+74:	write<<"/n"|
+76:	..GetTestMessage(" >> last check?",Str)|
+78:	end.
+
+Всего символов: 1509
+Всего строк: 65
+Пропущено: 946
+
+-----------------------------
+
+Ошибка 201: |Syntax| Ошибка в инструкции языка,
+Строка 24
+
+Ошибка 205: |Syntax| Ошибка в арифметической операции,
+Строка 24
+
+Ошибка 206: |Syntax| Ошибка в операции сравнения,
+Строка 24

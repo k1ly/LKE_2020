@@ -1,0 +1,150 @@
+
+-------- ID TABLE --------------
+
+  №  Имя идентификатора: Область видимости:       Индекс вхождения:   Тип:                     Значение:           
+
+  0. _L0                 Global                   2                   note   Literal           "STD.lib"
+  1. t                   notelength               7                   note   parameter         ""
+  2. notelength          EXTERN                   10                  unit   Function          
+  3. f                   comprnotes               15                  note   parameter         ""
+  4. s                   comprnotes               18                  note   parameter         ""
+  5. comprnotes          EXTERN                   21                  idle   Function          
+  6. g                   cncatnotes               26                  note   parameter         ""
+  7. s                   cncatnotes               29                  note   parameter         ""
+  8. cncatnotes          EXTERN                   32                  note   Function          
+  9. a                   powerunit                37                  unit   parameter         0
+ 10. b                   powerunit                40                  unit   parameter         0
+ 11. powerunit           EXTERN                   43                  unit   Function          
+ 12. p                   SimpleFunc               47                  unit   parameter         0
+ 13. proc_SimpleFunc     Global                   50                  unit   Function          
+ 14. _L                  Global                   55                  unit   Literal           296
+ 15. _L                  Global                   58                  unit   Literal           6
+ 16. __BigData           Global                   61                  []unit variable          {17,7,21,16,32,15}
+ 17. _L                  Global                   62                  []unit Literal           {17,7,21,16,32,15}
+ 18. __globalUn          Global                   66                  unit   variable          244
+ 19. _L                  Global                   68                  unit   Literal           244
+ 20. __globalIdl         Global                   72                  idle   variable          1
+ 21. _L                  Global                   74                  idle   Literal           1
+ 22. __globalNote        Global                   78                  note   variable          "First step is done...\n\n"
+ 23. _L1                 Global                   80                  note   Literal           "First step is done...\n\n"
+ 24. proc_VoidParmCall   Global                   86                  note   Function          
+ 25. n                   PrintName                96                  note   parameter         ""
+ 26. proc_PrintName      Global                   99                  note   Function          
+ 27. _L2                 Global                   104                 note   Literal           "My name is "
+ 28. _L3                 Global                   112                 note   Literal           "\n"
+ 29. _L4                 Global                   115                 note   Literal           "End."
+ 30. a                   GetTestMessage           129                 note   parameter         ""
+ 31. b                   GetTestMessage           132                 note   parameter         ""
+ 32. proc_GetTestMessage Global                   135                 idle   Function          
+ 33. _L5                 Global                   142                 note   Literal           "perfect"
+ 34. _L6                 Global                   152                 note   Literal           " almost got it!"
+ 35. _L7                 Global                   164                 note   Literal           ":) \nEnd of test.\n"
+ 36. _L                  Global                   176                 unit   Literal           17
+ 37. main                Global                   179                 Main   Function          
+ 38. main_start          main                     183                 note   variable          ""
+ 39. _L8                 Global                   185                 note   Literal           "\n----- Test starts! -----\n"
+ 40. _L                  Global                   191                 unit   Literal           5
+ 41. main_array          main                     194                 []unit variable          {322,28,4,13,0}
+ 42. _L                  Global                   195                 []unit Literal           {322,28,4,13}
+ 43. main_x              main                     198                 unit   variable          0
+ 45. _L                  Global                   206                 unit   Literal           33
+ 47. _L                  Global                   208                 unit   Literal           10
+ 49. _L                  Global                   210                 unit   Literal           156
+ 51. _L                  Global                   212                 unit   Literal           27
+ 52. _L9                 Global                   219                 note   Literal           "Kirill"
+ 53. _L                  Global                   222                 unit   Literal           1046
+ 55. _L                  Global                   226                 unit   Literal           3
+ 56. _L10                Global                   232                 note   Literal           "Go to the case #1\n"
+ 57. _L                  Global                   237                 unit   Literal           0
+ 58. _L11                Global                   243                 note   Literal           "Go to the bad choice\n"
+ 59. _L12                Global                   251                 note   Literal           "it is fail..\n"
+ 60. main_z              main                     255                 unit   variable          0
+ 61. _L                  Global                   265                 unit   Literal           2
+ 63. _L                  Global                   268                 unit   Literal           11
+ 67. _L                  Global                   276                 unit   Literal           513
+ 69. _L13                Global                   283                 note   Literal           "Value of Z is : "
+ 70. main_comment        main                     294                 note   variable          ""
+ 71. _L14                Global                   296                 note   Literal           "Powered "
+ 72. main_Str            main                     299                 note   variable          ""
+ 73. _L15                Global                   305                 note   Literal           "by POIT "
+ 74. _L16                Global                   310                 note   Literal           "String1 equal to string2 ? -> "
+ 75. main_cmpr           main                     313                 idle   variable          0
+ 76. _L17                Global                   321                 note   Literal           "string with 124*0+5;"
+ 77. _L18                Global                   330                 note   Literal           "\n\n"
+ 78. _L19                Global                   334                 note   Literal           "Array: "
+ 79. main_i              main                     337                 unit   variable          0
+ 81. _L                  Global                   348                 unit   Literal           1
+ 82. _c01_h              main       cycle_01      372                 unit   variable          0
+ 86. _L                  Global                   391                 unit   Literal           333
+ 90. _L                  Global                   402                 unit   Literal           44
+ 92. _L                  Global                   405                 unit   Literal           25
+ 93. _L20                Global                   412                 note   Literal           ", "
+ 94. _L21                Global                   422                 note   Literal           " >> last check?"
+
+-------- LEX TABLE -------------
+
+  1:  !al
+  2:  !f<ti>ti
+  3:  !f<ti,ti>ti
+  4:  !f<ti,ti>ti
+  5:  !f<ti,ti>ti
+  7:  *<ti>
+  8:  ti
+  9:  :r>>l.
+ 11:  [l]til.
+ 12:  &ti=l.
+ 13:  &ti=l.
+ 14:  &ti=l.
+ 16:  *<>ti:
+ 17:  r>>i.
+ 19:  *<ti>ti:
+ 20:  w<<l
+ 21:  w<<i
+ 22:  w<<l
+ 23:  i=l
+ 24:  i()
+ 25:  r>>i().
+ 27:  *<ti,ti>ti
+ 28:  :
+ 29:  ci(i,l)=>
+ 30:  i=i(i,l),
+ 31:  g=>i=i(i,l);
+ 32:  w<<i
+ 33:  r>>i(l)
+ 34:  .
+ 36:  m
+ 37:  :
+ 38:  &ti=l
+ 39:  w<<i
+ 41:  [l]til
+ 43:  &ti=i(i)*(l%l+l/l)
+ 44:  w<<i(l)
+ 45:  cl/i>l
+ 46:  =>w<<l,
+ 47:  ci>l=>
+ 48:  w<<l,
+ 49:  g=>w<<l;
+ 51:  &ti=(i(i[l],l)-l*l)/(i-l/l)
+ 52:  w<<l
+ 53:  w<<i
+ 54:  w<<l
+ 56:  &ti=l
+ 57:  &ti=i(i,l)
+ 58:  w<<l
+ 59:  &ti,
+ 60:  i=i(i,l)
+ 61:  w<<i
+ 62:  w<<l
+ 64:  w<<l
+ 65:  &ti=i
+ 66:  siui[l]+l
+ 67:  :
+ 68:  w<<i[i]
+ 69:  ci[i]<i[l]=>b
+ 70:  &ti=i(l,i)
+ 71:  ci[i]/i+l*(l-i)!(i*(i+l)-l)
+ 72:  =>
+ 73:  w<<l;
+ 74:  w<<l
+ 76:  ..i(l,i)
+ 78:  e.
